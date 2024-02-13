@@ -157,21 +157,38 @@ require('lazy').setup({
       end,
     },
   },
-
   {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
-    priority = 1000,
+    -- Colour Theme
+    "folke/tokyonight.nvim",
     lazy = false,
+    priority = 1000,
     config = function()
-      require('onedark').setup {
-        -- Set a style preset. 'dark' is default.
-        style = 'dark', -- dark, darker, cool, deep, warm, warmer, light
+      require('tokyonight').setup {
+        style = 'storm'
       }
-      require('onedark').load()
+      require('tokyonight').load()
     end,
   },
 
+  {
+    -- Function line colouring
+    'huy-hng/anyline.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    config = true,
+    event = 'VeryLazy',
+  },
+  {
+    -- command line plugin
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- add any options here
+    },
+    dependencies = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      "MunifTanjim/nui.nvim",
+    }
+  },
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
@@ -227,7 +244,16 @@ require('lazy').setup({
     },
     build = ':TSUpdate',
   },
-
+  {
+      "nvim-neo-tree/neo-tree.nvim",
+      branch = "v3.x",
+      dependencies = {
+        "nvim-lua/plenary.nvim",
+        "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+        "MunifTanjim/nui.nvim",
+        -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+      }
+  }
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
@@ -252,10 +278,16 @@ vim.o.hlsearch = false
 
 -- Make line numbers default
 vim.wo.number = true
+
+-- Relative lines
 vim.wo.rnu = true
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
+
+-- Menu transparency
+vim.o.pb = 30
+
 
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
