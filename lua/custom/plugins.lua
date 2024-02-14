@@ -1,6 +1,3 @@
--- [[ Install `lazy.nvim` plugin manager ]]
---    https://github.com/folke/lazy.nvim
---    `:help lazy.nvim.txt` for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system {
@@ -14,15 +11,12 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- [[ Configure plugins ]]
--- NOTE: Here is where you install your plugins.
---  You can configure plugins using the `config` key.
---
---  You can also configure plugins after the setup call,
---    as they will be available in your neovim runtime.
 require('lazy').setup({
-	-- NOTE: This is where your plugins related to LSP can be installed.
-	--  The configuration is done below. Search for lspconfig to find it below.
+	{
+		'nvimdev/dashboard-nvim',
+		event = 'VimEnter',
+		dependencies = { { 'nvim-tree/nvim-web-devicons' } }
+	},
 	{
 		-- LSP Configuration & Plugins
 		'neovim/nvim-lspconfig',
@@ -86,13 +80,6 @@ require('lazy').setup({
 	},
 
 	{
-		-- Function line colouring
-		'huy-hng/anyline.nvim',
-		dependencies = { 'nvim-treesitter/nvim-treesitter' },
-		config = true,
-		event = 'VeryLazy',
-	},
-	{
 		-- command line plugin
 		"folke/noice.nvim",
 		event = "VeryLazy",
@@ -104,8 +91,6 @@ require('lazy').setup({
 			"MunifTanjim/nui.nvim",
 		}
 	},
-	-- amongst your other plugins
-	{ 'akinsho/toggleterm.nvim', version = "*", config = true },
 
 	{
 		-- Set lualine as statusline
@@ -121,17 +106,8 @@ require('lazy').setup({
 		},
 	},
 
-	{
-		-- Add indentation guides even on blank lines
-		'lukas-reineke/indent-blankline.nvim',
-		-- Enable `lukas-reineke/indent-blankline.nvim`
-		-- See `:help ibl`
-		main = 'ibl',
-		opts = {},
-	},
-
 	-- "gc" to comment visual regions/lines
-	{ 'numToStr/Comment.nvim',   opts = {} },
+	{ 'numToStr/Comment.nvim',     opts = {} },
 
 	-- Fuzzy Finder (files, lsp, etc)
 	{
@@ -162,6 +138,9 @@ require('lazy').setup({
 		},
 		build = ':TSUpdate',
 	},
+
+	{ 'caenrique/buffer-term.nvim' },
+
 	{
 		"nvim-neo-tree/neo-tree.nvim",
 		branch = "v3.x",

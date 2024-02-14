@@ -1,4 +1,4 @@
-function replaceWord()
+local function replaceWord()
 	local word = vim.fn.expand '<cword>'
 	local newWord = vim.fn.input('Replace [' .. word .. '] with: ')
 
@@ -7,4 +7,4 @@ function replaceWord()
 	end
 end
 
-return {replaceWord = replaceWord}
+return { replaceWord = replaceWord }

@@ -1,4 +1,4 @@
-local functions = require('functions')
+local functions = require('custom.functions')
 -- See `:help vim.keymap.set()`
 
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
@@ -25,4 +25,3 @@ vim.keymap.set('n', '<leader>cb', '<cmd>w | bd<CR>', { silent = true, desc = '[c
 -- Paragraph jump focus places cursor in center
 vim.keymap.set('n', '}', '}zz', { noremap = true, silent = true })
 vim.keymap.set('n', '{', '{zz', { noremap = true, silent = true })
-

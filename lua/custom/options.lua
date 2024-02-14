@@ -13,7 +13,6 @@ vim.o.mouse = 'a'
 -- Menu transparency
 vim.o.pb = 30
 
-
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
@@ -23,7 +22,7 @@ vim.o.clipboard = 'unnamedplus'
 vim.o.breakindent = true
 
 -- Set tab
-vim.opt.tabstop = 4
+vim.o.tabstop = 4
 
 -- Save undo history
 vim.o.undofile = true
