@@ -1,17 +1,21 @@
 -- Set highlight on search
 vim.o.hlsearch = false
 
--- Make line numbers default
-vim.wo.number = true
+-- Line numbers
+vim.wo.nu = true
 
 -- Relative lines
 vim.wo.rnu = true
+
+-- Disable spell check
+vim.o.spell = false
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
 
 -- Menu transparency
 vim.o.pb = 30
+
 
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
@@ -43,3 +47,11 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
+
+-- Neovide settings
+vim.o.guifont = "JetBrainsMono Nerd Font:h14"
+vim.opt.linespace = 5
+vim.g.neovide_padding_top = 20
+vim.g.neovide_padding_bottom = 20
+vim.g.neovide_padding_right = 20
+vim.g.neovide_padding_left = 20
