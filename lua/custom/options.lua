@@ -11,10 +11,10 @@ vim.wo.rnu = true
 vim.o.spell = false
 
 -- Enable mouse mode
-vim.o.mouse = 'a'
+vim.o.mouse = 'v'
 
 -- Menu transparency
-vim.o.pb = 30
+vim.o.pb = 50
 
 
 -- Sync clipboard between OS and Neovim.
@@ -27,6 +27,7 @@ vim.o.breakindent = true
 
 -- Set tab
 vim.o.tabstop = 4
+vim.o.shiftwidth = 4
 
 -- Save undo history
 vim.o.undofile = true
@@ -49,7 +50,7 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.termguicolors = true
 
 -- Neovide settings
-vim.o.guifont = "JetBrainsMono Nerd Font:h14"
+vim.o.guifont = "JetBrainsMono Nerd Font:h11"
 vim.opt.linespace = 5
 vim.g.neovide_padding_top = 20
 vim.g.neovide_padding_bottom = 20

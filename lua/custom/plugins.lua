@@ -15,6 +15,11 @@ require('lazy').setup({
 	{
 		'nvimdev/dashboard-nvim',
 		event = 'VimEnter',
+		config = function()
+			require('dashboard').setup {
+				-- config
+			}
+		end,
 		dependencies = { { 'nvim-tree/nvim-web-devicons' } }
 	},
 	{
@@ -127,6 +132,10 @@ require('lazy').setup({
 	},
 
 	{ 'caenrique/buffer-term.nvim' },
+	{
+		"typicode/bg.nvim",
+		lazy = false
+	},
 
 	{
 		"nvim-neo-tree/neo-tree.nvim",
@@ -137,6 +146,11 @@ require('lazy').setup({
 			"MunifTanjim/nui.nvim",
 			-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
 		}
+	},
+	{
+		'windwp/nvim-autopairs',
+		event = "InsertEnter",
+		opts = {} -- this is equalent to setup({}) function
 	},
 	-- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
 	--       These are some example plugins that I've included in the kickstart repository.

@@ -7,4 +7,15 @@ local function replaceWord()
 	end
 end
 
-return { replaceWord = replaceWord }
+
+local function telescope_live_grep_open_files()
+	require('telescope.builtin').live_grep {
+		grep_open_files = true,
+		prompt_title = 'Live Grep in Open Files',
+	}
+end
+
+return {
+	replaceWord = replaceWord,
+	telescope_live_grep_open_files = telescope_live_grep_open_files
+}
