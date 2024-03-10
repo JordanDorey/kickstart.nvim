@@ -69,4 +69,5 @@ vim.keymap.set('n', '<leader>b', require('dap').toggle_breakpoint, { desc = 'Deb
 vim.keymap.set('n', '<leader>B', function()
 	require('dap').set_breakpoint(vim.fn.input 'Breakpoint condition: ')
 end, { desc = 'Debug: Set Breakpoint' })
+vim.keymap.set('n', '<leader>dq', require('dap').disconnect, { desc = 'Debug: Quit' })
 vim.keymap.set('n', '<F7>', require('dapui').toggle, { desc = 'Debug: See last session result.' })
