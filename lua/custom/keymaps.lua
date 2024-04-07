@@ -8,6 +8,9 @@ vim.g.maplocalleader = ' '
 -- Save file
 vim.keymap.set('n', '<leader>w', '<cmd>w<CR>', { noremap = true, desc = 'Save file' })
 
+-- jj to esc
+vim.keymap.set('i', 'jj', '<esc>', { silent = true })
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
