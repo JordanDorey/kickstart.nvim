@@ -254,6 +254,8 @@ cmp.setup {
   },
 }
 
+require('mini.indentscope').setup()
+
 require('custom.options')
 require('custom.autocmd')
 require('custom.keymaps')

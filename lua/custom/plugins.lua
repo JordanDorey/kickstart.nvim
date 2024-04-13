@@ -152,6 +152,7 @@ require('lazy').setup({
 		event = "InsertEnter",
 		opts = {} -- this is equalent to setup({}) function
 	},
+	{ 'echasnovski/mini.indentscope', version = '*' },
 	-- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
 	--       These are some example plugins that I've included in the kickstart repository.
 	--       Uncomment any of the lines below to enable them.

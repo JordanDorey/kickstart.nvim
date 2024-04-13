@@ -18,7 +18,7 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open float
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- Floating Neotree
-vim.keymap.set('n', '<leader>o', '<cmd>Neotree float toggle<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>n', '<cmd>Neotree float toggle<CR>', { noremap = true, silent = true })
 
 vim.keymap.set('n', '<leader>rw', functions.replaceWord, { silent = true, desc = '[r]name [w]ord' })
 vim.keymap.set('n', '<leader>cb', '<cmd>w | bd<CR>', { silent = true, desc = '[c]lose [b]uff' })
