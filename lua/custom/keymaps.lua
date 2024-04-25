@@ -32,12 +32,17 @@ vim.keymap.set('n', '<C-h>', '<C-w>h', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-j>', '<C-w>j', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-k>', '<C-w>k', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-l>', '<C-w>l', { noremap = true, silent = true })
+vim.keymap.set('n', 'gb', '<cmd>b#<CR>')
 
 -- Window resize
 vim.keymap.set('n', '<C-Up>', "<cmd>resize -2<CR>", { noremap = true, silent = true })
 vim.keymap.set('n', '<C-Down>', "<cmd>resize +2<CR>", { noremap = true, silent = true })
 vim.keymap.set('n', '<C-Left>', "<cmd>vertical resize -2<CR>", { noremap = true, silent = true })
 vim.keymap.set('n', '<C-Right>', "<cmd>vertical resize +2<CR>", { noremap = true, silent = true })
+
+-- Grep word
+vim.keymap.set('n', '<leader>fr', require('telescope.builtin').lsp_references, { desc = '[F]ind [R]eferences' })
+
 -- Telescope
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles,
 	{ desc = '[?] Find recently opened files' })
@@ -64,13 +69,10 @@ vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = 
 
 -- Debugger
 -- Basic debugging keymaps, feel free to change to your liking!
-vim.keymap.set('n', '<leader>dc', require('dap').continue, { desc = 'Debug: Start/Continue' })
-vim.keymap.set('n', '<leader>di', require('dap').step_into, { desc = 'Debug: Step Into' })
-vim.keymap.set('n', '<leader>do', require('dap').step_over, { desc = 'Debug: Step Over' })
-vim.keymap.set('n', '<leader>de', require('dap').step_out, { desc = 'Debug: Step Out' })
-vim.keymap.set('n', '<leader>b', require('dap').toggle_breakpoint, { desc = 'Debug: Toggle Breakpoint' })
-vim.keymap.set('n', '<leader>B', function()
-	require('dap').set_breakpoint(vim.fn.input 'Breakpoint condition: ')
-end, { desc = 'Debug: Set Breakpoint' })
+vim.keymap.set('n', '<F5>', require('dap').continue, { desc = 'Debug: Start/Continue' })
+vim.keymap.set('n', '<F11>', require('dap').step_into, { desc = 'Debug: Step Into' })
+vim.keymap.set('n', '<F10>', require('dap').step_over, { desc = 'Debug: Step Over' })
+vim.keymap.set('n', '<F9>', require('dap').step_out, { desc = 'Debug: Step Out' })
+vim.keymap.set('n', '<leader>db', require('dap').toggle_breakpoint, { desc = 'Debug: Toggle Breakpoint' })
 vim.keymap.set('n', '<leader>dq', require('dap').disconnect, { desc = 'Debug: Quit' })
 vim.keymap.set('n', '<F7>', require('dapui').toggle, { desc = 'Debug: See last session result.' })
