@@ -10,6 +10,11 @@ vim.keymap.set('n', '<leader>w', '<cmd>w<CR>', { noremap = true, desc = 'Save fi
 
 -- jj to esc
 vim.keymap.set('i', 'jj', '<esc>', { silent = true })
+vim.keymap.set('i', 'kk', '<esc>', { silent = true })
+
+-- Tab to cycle buffers
+vim.keymap.set('n', '<Tab>', ':bnext<CR>', { silent = true })
+vim.keymap.set('n', '<S-Tab>', ':bprevious<CR>', { silent = true })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
@@ -42,6 +47,8 @@ vim.keymap.set('n', '<C-Right>', "<cmd>vertical resize +2<CR>", { noremap = true
 
 -- Grep word
 vim.keymap.set('n', '<leader>fr', require('telescope.builtin').lsp_references, { desc = '[F]ind [R]eferences' })
+
+vim.keymap.set('n', '<leader>lg', '<cmd>Telescope live_grep only_sort_text=true<cr>')
 
 -- Telescope
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles,

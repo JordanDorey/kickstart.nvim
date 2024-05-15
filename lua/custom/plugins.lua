@@ -13,16 +13,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
 	{
-		'nvimdev/dashboard-nvim',
-		event = 'VimEnter',
-		config = function()
-			require('dashboard').setup {
-				-- config
-			}
-		end,
-		dependencies = { { 'nvim-tree/nvim-web-devicons' } }
-	},
-	{
 		-- LSP Configuration & Plugins
 		'neovim/nvim-lspconfig',
 		dependencies = {
@@ -77,8 +67,7 @@ require('lazy').setup({
 		lazy = false,
 		priority = 1000,
 		config = function()
-			require('tokyonight').setup {
-				style = 'storm'
+			require('tokyonight').setup { style = 'storm'
 			}
 			require('tokyonight').load()
 		end,
@@ -153,6 +142,7 @@ require('lazy').setup({
 		opts = {} -- this is equalent to setup({}) function
 	},
 	{ 'echasnovski/mini.indentscope', version = '*' },
+	{ 'tpope/vim-fugitive' },
 	-- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
 	--       These are some example plugins that I've included in the kickstart repository.
 	--       Uncomment any of the lines below to enable them.
