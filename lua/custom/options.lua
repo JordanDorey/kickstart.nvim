@@ -49,9 +49,12 @@ vim.o.completeopt = 'menuone,noselect'
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
 
+-- colour scheme
+vim.cmd.colorscheme "catppuccin-mocha"
+
 -- Neovide settings
-vim.o.guifont = "JetBrainsMono Nerd Font:h11"
-vim.opt.linespace = 5
+vim.o.guifont = "JetBrainsMono Nerd Font:h10"
+vim.opt.linespace = 3
 vim.g.neovide_padding_top = 20
 vim.g.neovide_padding_bottom = 20
 vim.g.neovide_padding_right = 20

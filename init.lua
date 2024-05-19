@@ -1,5 +1,4 @@
 require('custom.plugins')
-
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
 
