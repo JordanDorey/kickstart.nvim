@@ -23,7 +23,7 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open float
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- Floating Neotree
-vim.keymap.set('n', '<leader>n', '<cmd>Neotree float toggle<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>n', '<cmd>Neotree float reveal toggle<CR>', { noremap = true, silent = true })
 
 vim.keymap.set('n', '<leader>rw', functions.replaceWord, { silent = true, desc = '[r]name [w]ord' })
 vim.keymap.set('n', '<leader>cb', '<cmd>w | bd<CR>', { silent = true, desc = '[c]lose [b]uff' })
@@ -46,8 +46,8 @@ vim.keymap.set('n', '<M-h>', "<cmd>vertical resize -5<CR>", { noremap = true, si
 vim.keymap.set('n', '<M-l>', "<cmd>vertical resize +5<CR>", { noremap = true, silent = true })
 
 --Buff split
-vim.keymap.set('n', '<leader>bv', "<cmd>vs<CR>", { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>bh', "<cmd>sp<CR>", { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>bl', "<cmd>vs<CR>", { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>bj', "<cmd>sp<CR>", { noremap = true, silent = true })
 
 -- Grep word
 vim.keymap.set('n', '<leader>fr', require('telescope.builtin').lsp_references, { desc = '[F]ind [R]eferences' })
