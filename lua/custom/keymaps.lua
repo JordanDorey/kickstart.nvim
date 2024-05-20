@@ -42,10 +42,14 @@ vim.keymap.set('n', 'gb', '<cmd>b#<CR>')
 
 
 -- Window resize
-vim.keymap.set('n', '<C-Up>', "<cmd>resize -2<CR>", { noremap = true, silent = true })
-vim.keymap.set('n', '<C-Down>', "<cmd>resize +2<CR>", { noremap = true, silent = true })
-vim.keymap.set('n', '<C-Left>', "<cmd>vertical resize -2<CR>", { noremap = true, silent = true })
-vim.keymap.set('n', '<C-Right>', "<cmd>vertical resize +2<CR>", { noremap = true, silent = true })
+vim.keymap.set('n', '<M-k>', "<cmd>resize -5<CR>", { noremap = true, silent = true })
+vim.keymap.set('n', '<M-j>', "<cmd>resize +5<CR>", { noremap = true, silent = true })
+vim.keymap.set('n', '<M-h>', "<cmd>vertical resize -5<CR>", { noremap = true, silent = true })
+vim.keymap.set('n', '<M-l>', "<cmd>vertical resize +5<CR>", { noremap = true, silent = true })
+
+--Buff split
+vim.keymap.set('n', '<leader>bv', "<cmd>vs<CR>", { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>bh', "<cmd>sp<CR>", { noremap = true, silent = true })
 
 -- Grep word
 vim.keymap.set('n', '<leader>fr', require('telescope.builtin').lsp_references, { desc = '[F]ind [R]eferences' })
