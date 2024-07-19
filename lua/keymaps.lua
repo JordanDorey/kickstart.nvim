@@ -27,7 +27,7 @@ vim.keymap.set('n', '<leader>n', '<cmd>Neotree reveal float toggle<CR>', { norem
 vim.keymap.set('n', '<leader>o', '<cmd>Neotree buffers toggle<CR>', { noremap = true, silent = true })
 
 vim.keymap.set('n', '<leader>rw', functions.replaceWord, { silent = true, desc = '[r]name [w]ord' })
-vim.keymap.set('n', '<leader>cb', '<cmd>w | bd<CR>', { silent = true, desc = '[c]lose [b]uff' })
+vim.keymap.set('n', '<leader>bd', '<cmd>w | bp | bd #<CR>', { silent = true, desc = '[b]uffer [d]elete' })
 
 -- Paragraph jump focus places cursor in center
 vim.keymap.set('n', '}', '}zz', { noremap = true, silent = true })
