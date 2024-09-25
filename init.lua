@@ -1,4 +1,8 @@
 require('plugins')
+require('options')
+require('autocmd')
+require('keymaps')
+require("snippets")
 require('telescope').setup {}
 
 -- Enable telescope fzf native, if installed
@@ -154,7 +158,6 @@ mason_lspconfig.setup_handlers {
 -- See `:help cmp`
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
-require('luasnip.loaders.from_vscode').lazy_load()
 luasnip.config.setup {}
 
 cmp.setup {
@@ -183,7 +186,3 @@ cmp.setup {
 		{ name = 'path' },
 	},
 }
-
-require('options')
-require('autocmd')
-require('keymaps')

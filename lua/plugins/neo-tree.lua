@@ -8,9 +8,10 @@ return {
 	},
 	config = function()
 		require('neo-tree').setup({
+			enable_git_status = true,
 			popup_border_style = "rounded",
 			window = {
-				position = "right",
+				position = "left",
 				width = 30
 			}
 		})

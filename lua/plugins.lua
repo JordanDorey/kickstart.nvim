@@ -23,9 +23,10 @@ require('lazy').setup({
 	require('plugins.debug'),
 	require('plugins.cmp'),
 	require('plugins.luasnip'),
-
+	require('plugins.cmp_luasnip'),
+	{ "rafamadriz/friendly-snippets" },
 	{ 'numToStr/Comment.nvim' },
 	{ 'tpope/vim-fugitive' },
-	{ "typicode/bg.nvim",      lazy = false },
-	{ 'windwp/nvim-autopairs', event = "InsertEnter" },
+	{ "typicode/bg.nvim",            lazy = false },
+	{ 'windwp/nvim-autopairs',       event = "InsertEnter" },
 }, {})
