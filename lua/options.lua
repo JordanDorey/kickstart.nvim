@@ -16,6 +16,8 @@ vim.o.mouse = 'v'
 -- Menu transparency
 vim.o.pb = 50
 
+vim.g.have_nerd_font = true
+
 
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
@@ -42,6 +44,13 @@ vim.wo.signcolumn = 'yes'
 -- Decrease update time
 vim.o.updatetime = 250
 vim.o.timeoutlen = 1000
+
+vim.opt.list = true
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+
+vim.opt.cursorline = true
+
+vim.opt.scrolloff = 10
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
