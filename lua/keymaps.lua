@@ -12,10 +12,6 @@ vim.keymap.set('n', '<leader>w', '<cmd>w<CR>', { noremap = true, desc = 'Save fi
 vim.keymap.set('i', 'jj', '<esc>', { silent = true })
 vim.keymap.set('i', 'kk', '<esc>', { silent = true })
 
--- Tab to cycle buffers
-vim.keymap.set('n', '<Tab>', ':bnext<CR>', { silent = true })
-vim.keymap.set('n', '<S-Tab>', ':bprevious<CR>', { silent = true })
-
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
@@ -77,7 +73,27 @@ vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc
 vim.keymap.set('n', '<leader>sG', ':LiveGrepGitRoot<cr>', { desc = '[S]earch by [G]rep on Git Root' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
+vim.keymap.set('n', '<leader>jm', require('telescope.builtin').marks, { desc = '[J]ump [M]ark' })
 
+
+-- Harpoon
+vim.keymap.set("n", "<leader>a", function() require("harpoon"):list():add() end)
+vim.keymap.set("n", "<C-e>", function() require("harpoon").ui:toggle_quick_menu(require("harpoon"):list()) end)
+
+vim.keymap.set("n", "<leader>1", function() require("harpoon"):list():select(1) end)
+vim.keymap.set("n", "<leader>2", function() require("harpoon"):list():select(2) end)
+vim.keymap.set("n", "<leader>3", function() require("harpoon"):list():select(3) end)
+vim.keymap.set("n", "<leader>4", function() require("harpoon"):list():select(4) end)
+vim.keymap.set("n", "<leader>5", function() require("harpoon"):list():select(5) end)
+vim.keymap.set("n", "<leader>6", function() require("harpoon"):list():select(6) end)
+vim.keymap.set("n", "<leader>7", function() require("harpoon"):list():select(7) end)
+vim.keymap.set("n", "<leader>8", function() require("harpoon"):list():select(8) end)
+vim.keymap.set("n", "<leader>9", function() require("harpoon"):list():select(9) end)
+
+
+-- Toggle previous & next buffers stored within require("harpoon") list
+vim.keymap.set("n", "<Tab>", function() require("harpoon"):list():prev() end)
+vim.keymap.set("n", "<S-Tab>", function() require("harpoon"):list():next() end)
 
 -- Debugger
 -- Basic debugging keymaps, feel free to change to your liking!

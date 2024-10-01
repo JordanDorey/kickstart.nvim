@@ -11,7 +11,7 @@ vim.wo.rnu = true
 vim.o.spell = false
 
 -- Enable mouse mode
-vim.o.mouse = 'v'
+vim.o.mouse = ''
 
 -- Menu transparency
 vim.o.pb = 50

@@ -29,6 +29,7 @@ require('lazy').setup({
 	require('plugins.git_signs'),
 	require('plugins.lazydev'),
 	require('plugins.nvim_lsp'),
+	require('plugins.harpoon2'),
 	{ "rafamadriz/friendly-snippets" },
 	{ 'numToStr/Comment.nvim' },
 	{ 'tpope/vim-fugitive' },
