@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
 	require('plugins.lspconfig'),
-	require('plugins.tokyonight'),
+	require('plugins.catppuccin'),
 	require('plugins.lualine'),
 	require('plugins.telescope'),
 	require('plugins.treesitter'),
@@ -33,7 +33,7 @@ require('lazy').setup({
 	{ "rafamadriz/friendly-snippets" },
 	{ 'numToStr/Comment.nvim' },
 	{ 'tpope/vim-fugitive' },
-	{ "typicode/bg.nvim",            lazy = false },
+	{ 'typicode/bg.nvim',            lazy = false },
 	{ 'windwp/nvim-autopairs',       event = "InsertEnter" },
 	{ 'Bilal2453/luvit-meta',        lazy = true },
 }, {})
