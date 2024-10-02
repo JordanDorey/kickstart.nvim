@@ -20,7 +20,6 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 
 -- Floating Neotree
 vim.keymap.set('n', '<leader>n', '<cmd>Neotree reveal toggle<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>o', '<cmd>Neotree buffers toggle<CR>', { noremap = true, silent = true })
 
 vim.keymap.set('n', '<leader>rw', functions.replaceWord, { silent = true, desc = '[r]name [w]ord' })
 vim.keymap.set('n', '<leader>bd', '<cmd>w | bp | bd #<CR>', { silent = true, desc = '[b]uffer [d]elete' })
@@ -78,7 +77,7 @@ vim.keymap.set('n', '<leader>jm', require('telescope.builtin').marks, { desc = '
 
 -- Harpoon
 vim.keymap.set("n", "<leader>a", function() require("harpoon"):list():add() end)
-vim.keymap.set("n", "<C-e>", function() require("harpoon").ui:toggle_quick_menu(require("harpoon"):list()) end)
+vim.keymap.set("n", "<leader>o", function() require("harpoon").ui:toggle_quick_menu(require("harpoon"):list()) end)
 
 vim.keymap.set("n", "<leader>1", function() require("harpoon"):list():select(1) end)
 vim.keymap.set("n", "<leader>2", function() require("harpoon"):list():select(2) end)
