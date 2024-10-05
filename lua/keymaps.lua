@@ -23,6 +23,7 @@ vim.keymap.set('n', '<leader>n', '<cmd>Neotree reveal toggle<CR>', { noremap = t
 
 vim.keymap.set('n', '<leader>rw', functions.replaceWord, { silent = true, desc = '[r]name [w]ord' })
 vim.keymap.set('n', '<leader>sw', functions.surroundMacro, { silent = true, desc = '[r]name [w]ord' })
+vim.keymap.set('n', '<C-n>', functions.findNextInstance, { silent = true, desc = 'next instance' })
 vim.keymap.set('n', '<leader>bd', '<cmd>w | bp | bd #<CR>', { silent = true, desc = '[b]uffer [d]elete' })
 
 -- Paragraph jump focus places cursor in center

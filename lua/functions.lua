@@ -1,10 +1,17 @@
 local function replaceWord()
-	local word = vim.fn.expand '<cword>'
+	local word = vim.fn.expand("<cword>")
 	local newWord = vim.fn.input('Replace [' .. word .. '] with: ', word)
 
 	if string.len(newWord) > 0 then
 		vim.cmd('%s/' .. word .. '/' .. newWord .. '/gc')
 	end
+end
+
+local function findNextInstance()
+	local word = vim.fn.expand("<cword>")
+	vim.fn.setreg('/', '\\<' .. word .. '\\>')
+	vim.cmd('set hlsearch')
+	vim.cmd('execute "normal! /" . @/')
 end
 
 
@@ -37,6 +44,7 @@ end
 
 return {
 	replaceWord = replaceWord,
+	findNextInstance = findNextInstance,
 	surroundMacro = surroundMacro,
 	telescope_live_grep_open_files = telescope_live_grep_open_files
 }
