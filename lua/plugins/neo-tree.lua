@@ -6,7 +6,7 @@ return {
 		"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
 		"MunifTanjim/nui.nvim",
 	},
-	config = functionV()
+	config = function()
 		require('neo-tree').setup({
 			enable_git_status = true,
 			popup_border_style = "rounded",

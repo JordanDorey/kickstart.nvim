@@ -104,9 +104,9 @@ return {
   "windwp/nvim-autopairs",
   -- Optional dependency
   dependencies = { 'hrsh7th/nvim-cmp' },
-  config = functionV()
+  config = function()
     require("nvim-autopairs").setup {}
-    -- If you want to automatically add `(` after selecting a functionV or method
+    -- If you want to automatically add `(` after selecting a function or method
     local cmp_autopairs = require('nvim-autopairs.completion.cmp')
     local cmp = require('cmp')
     cmp.event:on(
@@ -136,7 +136,7 @@ return {
     "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
     "MunifTanjim/nui.nvim",
   },
-  config = functionV ()
+  config = function ()
     require('neo-tree').setup {}
   end,
 }
@@ -172,7 +172,7 @@ Each PR, especially those which increase the line count, should have a descripti
     configuration that someone can easily `git clone` as a basis for their own.
     As you progress in learning Neovim and Lua, you might consider splitting `init.lua`
     into smaller parts. A fork of kickstart that does this while maintaining the exact
-    same functionVality is available here:
+    same functionality is available here:
     * [kickstart-modular.nvim](https://github.com/dam9000/kickstart-modular.nvim)
   * Discussions on this topic can be found here:
     * [Restructure the configuration](https://github.com/nvim-lua/kickstart.nvim/issues/218)

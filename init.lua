@@ -41,8 +41,8 @@ require('nvim-treesitter.configs').setup {
 				-- You can use the capture groups defined in textobjects.scm
 				['aa'] = '@parameter.outer',
 				['ia'] = '@parameter.inner',
-				['af'] = '@functionV.outer',
-				['if'] = '@functionV.inner',
+				['af'] = '@function.outer',
+				['if'] = '@function.inner',
 				['ac'] = '@class.outer',
 				['ic'] = '@class.inner',
 			},
@@ -51,19 +51,19 @@ require('nvim-treesitter.configs').setup {
 			enable = true,
 			set_jumps = true, -- whether to set jumps in the jumplist
 			goto_next_start = {
-				[']m'] = '@functionV.outer',
+				[']m'] = '@function.outer',
 				[']]'] = '@class.outer',
 			},
 			goto_next_end = {
-				[']M'] = '@functionV.outer',
+				[']M'] = '@function.outer',
 				[']['] = '@class.outer',
 			},
 			goto_previous_start = {
-				['[m'] = '@functionV.outer',
+				['[m'] = '@function.outer',
 				['[['] = '@class.outer',
 			},
 			goto_previous_end = {
-				['[M'] = '@functionV.outer',
+				['[M'] = '@function.outer',
 				['[]'] = '@class.outer',
 			},
 		},
@@ -71,11 +71,11 @@ require('nvim-treesitter.configs').setup {
 }
 
 -- [[ Configure LSP ]]
---  This functionV gets run when an LSP connects to a particular buffer.
-local on_attach = functionV(_, bufnr)
-	-- In this case, we create a functionV that lets us more easily define mappings specific
+--  This function gets run when an LSP connects to a particular buffer.
+local on_attach = function(_, bufnr)
+	-- In this case, we create a function that lets us more easily define mappings specific
 	-- for LSP related items. It sets the mode, buffer and description for us each time.
-	local nmap = functionV(keys, func, desc)
+	local nmap = function(keys, func, desc)
 		if desc then
 			desc = 'LSP: ' .. desc
 		end
@@ -84,7 +84,7 @@ local on_attach = functionV(_, bufnr)
 	end
 
 	nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
-	nmap('<leader>ca', functionV()
+	nmap('<leader>ca', function()
 		vim.lsp.buf.code_action { context = { only = { 'quickfix', 'refactor', 'source' } } }
 	end, '[C]ode [A]ction')
 
@@ -98,17 +98,17 @@ local on_attach = functionV(_, bufnr)
 	nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
 	nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
 
-	-- Lesser used LSP functionVality
+	-- Lesser used LSP functionality
 	nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
 	-- Create a command `:Format` local to the LSP buffer
-	vim.api.nvim_buf_create_user_command(bufnr, 'Format', functionV(_)
+	vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
 		vim.lsp.buf.format()
 	end, { desc = 'Format current buffer with LSP' })
 end
 
 
--- mason-lspconfig requires that these setup functionVs are called in this order
+-- mason-lspconfig requires that these setup functions are called in this order
 -- before setting up the servers.
 require('mason').setup()
 require('mason-lspconfig').setup()
@@ -143,7 +143,7 @@ mason_lspconfig.setup {
 }
 
 mason_lspconfig.setup_handlers {
-	functionV(server_name)
+	function(server_name)
 		require('lspconfig')[server_name].setup {
 			capabilities = capabilities,
 			on_attach = on_attach,
@@ -161,7 +161,7 @@ luasnip.config.setup {}
 
 cmp.setup {
 	snippet = {
-		expand = functionV(args)
+		expand = function(args)
 			luasnip.lsp_expand(args.body)
 		end,
 	},
