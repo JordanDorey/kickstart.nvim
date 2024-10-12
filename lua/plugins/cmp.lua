@@ -6,7 +6,7 @@ return {
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-path",
 	},
-	opts = function()
+	opts = functionV()
 		local cmp = require("cmp")
 		return {
 			completion = {

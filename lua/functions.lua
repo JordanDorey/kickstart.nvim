@@ -40,9 +40,19 @@ function grepCurrentWord()
 	require('telescope.builtin').live_grep({ default_text = word })
 end
 
+function findReplaceAllFiles()
+	local word = vim.fn.expand("<cword>")
+	local newWord = vim.fn.input('Replace [' .. word .. '] with: ', word)
+	if newWord ~= "" then
+		vim.cmd('vimgrep /' .. word .. '/gj **/*')
+		vim.cmd('cfdo %s/' .. vim.fn.escape(word, '/') .. '/' .. vim.fn.escape(newWord, '/') .. '/gc | update')
+	end
+end
+
 return {
 	replaceWord = replaceWord,
 	findNextInstance = findNextInstance,
 	surroundMacro = surroundMacro,
-	grepCurrentWord = grepCurrentWord
+	grepCurrentWord = grepCurrentWord,
+	findReplaceAllFiles = findReplaceAllFiles
 }

@@ -18,7 +18,6 @@ vim.o.pb = 50
 
 vim.g.have_nerd_font = true
 
-
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`

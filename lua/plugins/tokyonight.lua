@@ -3,7 +3,7 @@ return {
 	"folke/tokyonight.nvim",
 	lazy = false,
 	priority = 1000,
-	config = function()
+	config = functionV()
 		require('tokyonight').setup { style = 'storm'
 		}
 		require('tokyonight').load()
