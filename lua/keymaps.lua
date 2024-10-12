@@ -24,6 +24,7 @@ vim.keymap.set('n', '<leader>n', '<cmd>Neotree reveal toggle<CR>', { noremap = t
 vim.keymap.set('n', '<leader>rw', functions.replaceWord, { silent = true, desc = '[r]name [w]ord' })
 vim.keymap.set('n', '<leader>sw', functions.surroundMacro, { silent = true, desc = '[r]name [w]ord' })
 vim.keymap.set('n', '<C-n>', functions.findNextInstance, { silent = true, desc = 'next instance' })
+vim.keymap.set('n', '<leader>fw', functions.grepCurrentWord, { silent = true, desc = 'next instance' })
 vim.keymap.set('n', '<leader>bd', '<cmd>w | bp | bd #<CR>', { silent = true, desc = '[b]uffer [d]elete' })
 
 -- Paragraph jump focus places cursor in center
@@ -63,7 +64,6 @@ vim.keymap.set('n', '<leader>/', function()
 		previewer = false,
 	})
 end, { desc = '[/] Fuzzily search in current buffer' })
-vim.keymap.set('n', '<leader>s/', functions.telescope_live_grep_open_files, { desc = '[S]earch [/] in Open Files' })
 vim.keymap.set('n', '<leader>ss', require('telescope.builtin').builtin, { desc = '[S]earch [S]elect Telescope' })
 vim.keymap.set('n', '<leader>sb', require('telescope.builtin').buffers, { desc = '[S]earch [B]uffer Telescope' })
 vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })

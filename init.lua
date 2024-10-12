@@ -5,7 +5,7 @@ require('keymaps')
 require("snippets")
 require('telescope').setup {}
 
-vim.cmd.colorscheme "catppuccin"
+vim.cmd.colorscheme "catppuccin-mocha"
 
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
