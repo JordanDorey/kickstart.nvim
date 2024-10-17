@@ -42,10 +42,11 @@ end
 
 function findReplaceAllFiles()
 	local word = vim.fn.expand("<cword>")
-	local newWord = vim.fn.input('Replace [' .. word .. '] with: ', word)
+	local oldWord = vim.fn.input('Word to replace? ', word)
+	local newWord = vim.fn.input('Replace [' .. oldWord .. '] with: ', oldWord)
 	if newWord ~= "" then
-		vim.cmd('vimgrep /' .. word .. '/gj **/*')
-		vim.cmd('cfdo %s/' .. vim.fn.escape(word, '/') .. '/' .. vim.fn.escape(newWord, '/') .. '/gc | update')
+		vim.cmd('vimgrep /' .. oldWord .. '/gj **/*')
+		vim.cmd('cfdo %s/' .. vim.fn.escape(oldWord, '/') .. '/' .. vim.fn.escape(newWord, '/') .. '/gc | update')
 	end
 end
 
