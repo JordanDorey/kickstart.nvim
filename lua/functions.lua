@@ -54,5 +54,5 @@ return {
 	findNextInstance = findNextInstance,
 	surroundMacro = surroundMacro,
 	grepCurrentWord = grepCurrentWord,
-	findReplaceAllFiles = findReplaceAllFiles
+	findReplaceAllFiles = findReplaceAllFiles,
 }

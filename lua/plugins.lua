@@ -13,7 +13,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-	require('plugins.lspconfig'),
 	require('plugins.catppuccin'),
 	require('plugins.lualine'),
 	require('plugins.telescope'),

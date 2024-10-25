@@ -3,9 +3,40 @@ require('options')
 require('autocmd')
 require('keymaps')
 require("snippets")
-require('telescope').setup {}
+require('telescope').setup {
+	defaults = {
+		mappings = {
+			i = {
+				['jj'] = require('telescope.actions').close,
+			},
+		},
+		layout = 'bottom',
+		layout_strategies = 'vertical',
+		layout_config = {
+			horizontal = {
+				width = 0.6,
+				height = 0.7,
+				prompt_position = "bottom",
+				preview_cutoff = 20,
+				preview_width = 0.70,
+			},
+		},
+		sorting_strategy = "ascending",
+		path_display = { "smart" },
+		winblend = 10,
+	}
+}
 
-vim.cmd.colorscheme "catppuccin-mocha"
+require("catppuccin").setup({
+	flavour = "mocha",
+	kitty = true,
+	integrations = {
+		telescope = true,
+		fzf = true,
+		treesitter = true
+	}
+})
+vim.cmd.colorscheme "catppuccin"
 
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
@@ -13,7 +44,7 @@ pcall(require('telescope').load_extension, 'fzf')
 -- [[ Configure Treesitter ]]
 require('nvim-treesitter.configs').setup {
 	-- Add languages to be installed here that you want installed for treesitter
-	ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash' },
+	ensure_installed = { 'c', 'cpp', 'go', 'gomod', 'gowork', 'gotmpl', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash' },
 	-- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
 	auto_install = true,
 	-- Install languages synchronously (only applied to `ensure_installed`)

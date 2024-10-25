@@ -13,18 +13,17 @@ vim.keymap.set('i', 'jj', '<esc>', { silent = true })
 vim.keymap.set('i', 'kk', '<esc>', { silent = true })
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
+vim.keymap.set('n', 'ge', vim.diagnostic.goto_next, { noremap = true, desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setqflist, { desc = 'Open diagnostics list' })
 
 -- Floating Neotree
 vim.keymap.set('n', '<leader>n', '<cmd>Neotree reveal toggle<CR>', { noremap = true, silent = true })
 
-vim.keymap.set('n', '<leader>rw', functions.replaceWord, { silent = true, desc = '[r]name [w]ord' })
-vim.keymap.set('n', '<leader>sw', functions.surroundMacro, { silent = true, desc = '[r]name [w]ord' })
-vim.keymap.set('n', '<C-n>', functions.findNextInstance, { silent = true, desc = 'next instance' })
-vim.keymap.set('n', '<leader>fw', functions.grepCurrentWord, { silent = true, desc = 'next instance' })
+vim.keymap.set('n', '<leader>rw', functions.replaceWord, { silent = true, desc = '[r]ename [w]ord' })
+vim.keymap.set('n', '<leader>sw', functions.surroundMacro, { silent = true, desc = '[s]urrund [w]ord' })
+vim.keymap.set('n', '<C-n>', functions.findNextInstance, { silent = true, desc = '[n]ext instance' })
+vim.keymap.set('n', '<leader>fw', functions.grepCurrentWord, { silent = true, desc = '[f]ind [w]ord' })
 vim.keymap.set('n', '<leader>ra', functions.findReplaceAllFiles, { silent = true, desc = 'find and replace all words' })
 vim.keymap.set('n', '<leader>bd', '<cmd>w | bp | bd #<CR>', { silent = true, desc = '[b]uffer [d]elete' })
 
@@ -66,20 +65,20 @@ vim.keymap.set('n', '<leader>/', function()
 	})
 end, { desc = '[/] Fuzzily search in current buffer' })
 vim.keymap.set('n', '<leader>ss', require('telescope.builtin').builtin, { desc = '[S]earch [S]elect Telescope' })
-vim.keymap.set('n', '<leader>sb', require('telescope.builtin').buffers, { desc = '[S]earch [B]uffer Telescope' })
+vim.keymap.set('n', '<leader>bs', require('telescope.builtin').buffers, { desc = '[B]uffer [S]earch' })
 vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
 vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
-vim.keymap.set('n', '<leader>sG', ':LiveGrepGitRoot<cr>', { desc = '[S]earch by [G]rep on Git Root' })
-vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
+vim.keymap.set('n', '<leader>se', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
 vim.keymap.set('n', '<leader>jm', require('telescope.builtin').marks, { desc = '[J]ump [M]ark' })
+vim.keymap.set('n', '<leader>km', require('telescope.builtin').keymaps, { desc = 'test' })
 
 
 -- Harpoon
 vim.keymap.set("n", "<leader>a", function() require("harpoon"):list():add() end)
-vim.keymap.set("n", "<leader>o", function() require("harpoon").ui:toggle_quick_menu(require("harpoon"):list()) end)
+vim.keymap.set("n", "<leader>h", function() require("harpoon").ui:toggle_quick_menu(require("harpoon"):list()) end)
 
 vim.keymap.set("n", "<leader>1", function() require("harpoon"):list():select(1) end)
 vim.keymap.set("n", "<leader>2", function() require("harpoon"):list():select(2) end)

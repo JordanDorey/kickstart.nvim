@@ -14,4 +14,11 @@ return {
 		-- Allows extra capabilities provided by nvim-cmp
 		'hrsh7th/cmp-nvim-lsp',
 	},
+	config = function()
+		local server = {
+			gopls = {
+				filetypes = { "go", "gomod", "gowork", "gohtml", "gotmpl", "go.html", "go.tmpl" }
+			}
+		}
+	end
 }
