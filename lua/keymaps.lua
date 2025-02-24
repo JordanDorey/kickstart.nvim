@@ -22,9 +22,9 @@ vim.keymap.set('n', '<leader>n', '<cmd>Neotree reveal toggle<CR>', { noremap = t
 
 vim.keymap.set('n', '<leader>rw', functions.replaceWord, { silent = true, desc = '[r]ename [w]ord' })
 vim.keymap.set('n', '<leader>sw', functions.surroundMacro, { silent = true, desc = '[s]urrund [w]ord' })
-vim.keymap.set('n', '<C-n>', functions.findNextInstance, { silent = true, desc = '[n]ext instance' })
 vim.keymap.set('n', '<leader>fw', functions.grepCurrentWord, { silent = true, desc = '[f]ind [w]ord' })
 vim.keymap.set('n', '<leader>ra', functions.findReplaceAllFiles, { silent = true, desc = 'find and replace all words' })
+vim.keymap.set('n', '<leader>wl', functions.liveGrepList, { silent = true, desc = '[w]ord [l]ist' })
 vim.keymap.set('n', '<leader>bd', '<cmd>w | bp | bd #<CR>', { silent = true, desc = '[b]uffer [d]elete' })
 
 -- Paragraph jump focus places cursor in center
@@ -74,26 +74,6 @@ vim.keymap.set('n', '<leader>se', require('telescope.builtin').diagnostics, { de
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
 vim.keymap.set('n', '<leader>jm', require('telescope.builtin').marks, { desc = '[J]ump [M]ark' })
 vim.keymap.set('n', '<leader>km', require('telescope.builtin').keymaps, { desc = 'test' })
-
-
--- Harpoon
-vim.keymap.set("n", "<leader>a", function() require("harpoon"):list():add() end)
-vim.keymap.set("n", "<leader>h", function() require("harpoon").ui:toggle_quick_menu(require("harpoon"):list()) end)
-
-vim.keymap.set("n", "<leader>1", function() require("harpoon"):list():select(1) end)
-vim.keymap.set("n", "<leader>2", function() require("harpoon"):list():select(2) end)
-vim.keymap.set("n", "<leader>3", function() require("harpoon"):list():select(3) end)
-vim.keymap.set("n", "<leader>4", function() require("harpoon"):list():select(4) end)
-vim.keymap.set("n", "<leader>5", function() require("harpoon"):list():select(5) end)
-vim.keymap.set("n", "<leader>6", function() require("harpoon"):list():select(6) end)
-vim.keymap.set("n", "<leader>7", function() require("harpoon"):list():select(7) end)
-vim.keymap.set("n", "<leader>8", function() require("harpoon"):list():select(8) end)
-vim.keymap.set("n", "<leader>9", function() require("harpoon"):list():select(9) end)
-
-
--- Toggle previous & next buffers stored within require("harpoon") list
-vim.keymap.set("n", "<Tab>", function() require("harpoon"):list():prev() end)
-vim.keymap.set("n", "<S-Tab>", function() require("harpoon"):list():next() end)
 
 -- Debugger
 -- Basic debugging keymaps, feel free to change to your liking!

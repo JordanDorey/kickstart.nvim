@@ -7,14 +7,6 @@ local function replaceWord()
 	end
 end
 
-local function findNextInstance()
-	local word = vim.fn.expand("<cword>")
-	vim.fn.setreg('/', '\\<' .. word .. '\\>')
-	vim.cmd('set hlsearch')
-	vim.cmd('execute "normal! /" . @/')
-end
-
-
 local function surroundMacro()
 	vim.api.nvim_echo({ { "Surrond with? ", "Normal" } }, false, {})
 	local char = vim.fn.getchar()
@@ -50,10 +42,25 @@ function findReplaceAllFiles()
 	end
 end
 
+local function liveGrepList()
+	-- Save the current cursor position to the jumplist
+	-- vim.api.nvim_command('normal! m`')
+	local word = vim.fn.expand("<cword>")
+
+	-- Run ripgrep (or another grep tool) and populate the quickfix list
+	vim.fn.setqflist({}, ' ', {
+		lines = vim.fn.systemlist('rg --vimgrep --smart-case ' .. vim.fn.shellescape(word)),
+		efm = '%f:%l:%c:%m',
+	})
+
+	-- Open the quickfix window
+	vim.api.nvim_command('copen')
+end
+
 return {
 	replaceWord = replaceWord,
-	findNextInstance = findNextInstance,
 	surroundMacro = surroundMacro,
 	grepCurrentWord = grepCurrentWord,
 	findReplaceAllFiles = findReplaceAllFiles,
+	liveGrepList = liveGrepList,
 }

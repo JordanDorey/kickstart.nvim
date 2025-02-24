@@ -18,7 +18,7 @@ require('telescope').setup {
 				height = 0.7,
 				prompt_position = "bottom",
 				preview_cutoff = 20,
-				preview_width = 0.70,
+				preview_width = 0.80,
 			},
 		},
 		sorting_strategy = "ascending",
@@ -26,17 +26,6 @@ require('telescope').setup {
 		winblend = 10,
 	}
 }
-
-require("catppuccin").setup({
-	flavour = "mocha",
-	kitty = true,
-	integrations = {
-		telescope = true,
-		fzf = true,
-		treesitter = true
-	}
-})
-vim.cmd.colorscheme "catppuccin"
 
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')

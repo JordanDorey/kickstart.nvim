@@ -13,7 +13,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-	require('plugins.catppuccin'),
+	require('plugins.tokyonight'),
 	require('plugins.lualine'),
 	require('plugins.telescope'),
 	require('plugins.treesitter'),
@@ -28,7 +28,6 @@ require('lazy').setup({
 	require('plugins.git_signs'),
 	require('plugins.lazydev'),
 	require('plugins.nvim_lsp'),
-	require('plugins.harpoon2'),
 	{ "rafamadriz/friendly-snippets" },
 	{ 'numToStr/Comment.nvim' },
 	{ 'tpope/vim-fugitive' },

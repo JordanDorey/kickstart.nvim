@@ -4,8 +4,7 @@ return {
 	lazy = false,
 	priority = 1000,
 	config = function()
-		require('tokyonight').setup { style = 'storm'
-		}
+		require('tokyonight').setup { style = 'night' }
 		require('tokyonight').load()
 	end,
 }
