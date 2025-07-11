@@ -10,6 +10,7 @@ return {
 		require('neo-tree').setup({
 			enable_git_status = true,
 			popup_border_style = "rounded",
+			close_if_last_window = true,
 			window = {
 				position = "left",
 				width = 30

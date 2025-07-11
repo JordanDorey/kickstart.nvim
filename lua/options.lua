@@ -58,7 +58,7 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.termguicolors = true
 
 -- Neovide settings
-vim.o.guifont = "JetBrainsMono Nerd Font:h11"
+vim.o.guifont = "FiraCode Nerd Font Mono:h11"
 vim.opt.linespace = 5
 vim.g.neovide_padding_top = 20
 vim.g.neovide_padding_bottom = 20
