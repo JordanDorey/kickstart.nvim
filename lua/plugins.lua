@@ -27,6 +27,7 @@ require('lazy').setup({
 	require('plugins.vim_sleuth'),
 	require('plugins.git_signs'),
 	require('plugins.lazydev'),
+	require('plugins.mason-lsp'),
 	require('plugins.nvim_lsp'),
 	{ "rafamadriz/friendly-snippets" },
 	{ 'numToStr/Comment.nvim' },

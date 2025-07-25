@@ -36,9 +36,6 @@ return {
 
 			-- Keymaps and other on_attach logic
 			on_attach = function(client, bufnr)
-				-- Enable completion triggered by typing
-				-- client.server_capabilities.completionProvider = true -- This is usually enabled by default
-
 				local bufmap = function(mode, lhs, rhs)
 					vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, noremap = true, silent = true })
 				end
@@ -54,16 +51,12 @@ return {
 			end,
 		})
 
-		-- This ensures gopls is installed automatically by mason
-		require('mason-lspconfig').setup_handlers {
+		-- -- This ensures gopls is installed automatically by mason
+		require('mason-lspconfig').setup {
 			function(server_name) -- Default handler
 				lspconfig[server_name].setup {
 					capabilities = capabilities,
 				}
-			end,
-			['gopls'] = function()
-				-- The gopls setup is already defined above,
-				-- so we can leave this empty to avoid overriding it.
 			end,
 		}
 	end,
