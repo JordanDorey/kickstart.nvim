@@ -16,4 +16,32 @@ return {
 			end,
 		},
 	},
+	config = function()
+		require('telescope').setup {
+			defaults = {
+				mappings = {
+					i = {
+						['jj'] = require('telescope.actions').close,
+					},
+				},
+				layout = 'bottom',
+				layout_strategies = 'vertical',
+				layout_config = {
+					horizontal = {
+						width = 0.6,
+						height = 0.7,
+						prompt_position = "bottom",
+						preview_cutoff = 20,
+						preview_width = 0.80,
+					},
+				},
+				sorting_strategy = "ascending",
+				path_display = { "smart" },
+				winblend = 10,
+			}
+		}
+
+		-- Enable telescope fzf native, if installed
+		pcall(require('telescope').load_extension, 'fzf')
+	end
 }

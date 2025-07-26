@@ -13,11 +13,10 @@ vim.keymap.set('i', 'jj', '<esc>', { silent = true })
 vim.keymap.set('i', 'kk', '<esc>', { silent = true })
 
 -- Diagnostic keymaps
-vim.keymap.set('n', 'ge', vim.diagnostic.goto_next, { noremap = true, desc = 'Go to previous diagnostic message' })
+vim.keymap.set('n', 'ge', vim.diagnostic.get_next, { noremap = true, desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setqflist, { desc = 'Open diagnostics list' })
 
--- Floating Neotree
 vim.keymap.set('n', '<leader>n', '<cmd>Neotree reveal toggle<CR>', { noremap = true, silent = true })
 
 vim.keymap.set('n', '<leader>rw', functions.replaceWord, { silent = true, desc = '[r]ename [w]ord' })

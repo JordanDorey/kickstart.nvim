@@ -36,18 +36,15 @@ return {
 
 			-- Keymaps and other on_attach logic
 			on_attach = function(client, bufnr)
-				local bufmap = function(mode, lhs, rhs)
-					vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, noremap = true, silent = true })
-				end
-
-				-- Standard LSP keymaps
-				bufmap('n', 'K', vim.lsp.buf.hover)
-				bufmap('n', 'gd', vim.lsp.buf.definition)
-				bufmap('n', 'gD', vim.lsp.buf.declaration)
-				bufmap('n', 'gi', vim.lsp.buf.implementation)
-				bufmap('n', 'gr', vim.lsp.buf.references)
-				bufmap('n', '<leader>ca', vim.lsp.buf.code_action)
-				bufmap('n', '<leader>rn', vim.lsp.buf.rename)
+				print("LSP is now active!")
+				local telescope = require('telescope.builtin')
+				vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
+				vim.keymap.set('n', 'gd', telescope.lsp_definitions, {})
+				vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, {})
+				vim.keymap.set('n', 'gi', telescope.lsp_implementations, {})
+				vim.keymap.set('n', 'gr', vim.lsp.buf.references, {})
+				vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
+				vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {})
 			end,
 		})
 
